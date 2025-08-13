@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ticket Booking</title>
+<style>
+body{font-family:Arial;text-align:center;background:#f0f0f0}
+form{background:#fff;padding:20px;max-width:300px;margin:auto;border-radius:10px}
+input,select,button{margin:5px;width:90%;padding:8px}
+</style>
+</head>
+<body>
+<h2>Ticket Booking</h2>
+<form id="bookingForm">
+<select id="type" required>
+<option value="">Select Type</option>
+<option>Movie</option><option>Bus</option>
+<option>Train</option><option>Airlines</option>
+</select>
+<input type="text" id="name" placeholder="Your Name" required>
+<input type="date" id="date" required>
+<input type="number" id="tickets" min="1" max="10" placeholder="Tickets" required>
+<label><input type="checkbox" id="consent" required> I agree to terms</label><br>
+<button type="submit">Book Now</button>
+</form>
+<script>
+document.getElementById("bookingForm").addEventListener("submit",function(e){
+ e.preventDefault();
+ alert("Booking Confirmed for "+type.value+"!\nName: "+name.value+"\nTickets: "+tickets.value);
+});
+</script>
+</body>
+</html>
